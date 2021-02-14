@@ -1,0 +1,73 @@
+@import "_base", "_variable";
+
+body {
+  font-family: $font-family;
+}
+
+.container {
+  margin: 10vh auto; 
+  width: $width;
+  border: 2px solid black;
+
+  header {
+    background-color: $yellow-color;
+    text-align: center;
+    padding: $padding;
+    user-select: none;
+
+    h1 {
+      font-size: $font-size-large;
+    }
+  }
+
+  input {
+    width: $width;
+    line-height: $line-height;
+    box-sizing: border-box;
+    font-size: $font-size-medium;
+    user-select: none;
+    text-align: center;
+    font-family: $font-family;
+    border:none;
+    background-color: $gray-color;
+
+      &:focus {
+        outline: none;
+        border: {
+          top: 2px solid black;
+          bottom: 2px solid black;
+        }
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+  }
+
+  li {
+    line-height: $line-height;
+    user-select: none;
+
+    &:nth-child(2n) {
+      background-color: $gray-color;
+    }
+
+    font: {
+      size: $font-size-medium;
+    }
+    //  checkBox
+    .far, .fas {
+      padding: $padding;
+      margin-left: $margin;
+      cursor: pointer;
+    }
+
+    .todo {
+      margin-left: $margin;
+    }
+
+  }
+}
+
+.checked {
+  text-decoration: line-through;
+}
