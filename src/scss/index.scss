@@ -2,12 +2,14 @@
 
 body {
   font-family: $font-family;
+  background-color: #f7ede2;
 }
 
 .container {
   margin: 10vh auto; 
   width: $width;
-  border: 2px solid black;
+  border: $border-style;
+  box-shadow: 2px 1px 1px 2px rgba(0, 0, 0, 0.5);;
 
   header {
     background-color: $yellow-color;
@@ -34,11 +36,12 @@ body {
       &:focus {
         outline: none;
         border: {
-          top: 2px solid black;
-          bottom: 2px solid black;
+          top: $border-style;
+          bottom: $border-style;
         }
         &::placeholder {
-          opacity: 0;
+          visibility: hidden;
+          // opacity: 0;
         }
       }
   }
@@ -47,6 +50,10 @@ body {
     line-height: $line-height;
     user-select: none;
 
+    &:nth-child(2n+1) {
+      background-color: $white-color;
+    }
+    
     &:nth-child(2n) {
       background-color: $gray-color;
     }
