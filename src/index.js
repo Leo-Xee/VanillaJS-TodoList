@@ -1,5 +1,8 @@
+const body = document.querySelector("body");
+const header = document.querySelector("header");
 const input = document.querySelector("input");
 const ul = document.querySelector("ul");
+const btn = document.querySelector(".toggleBtn");
 
 // localStorage 영속성 관리
 if (!localStorage.todoList) {
@@ -34,5 +37,16 @@ ul.addEventListener("click", (e) => {
       localStorage.todoList = ul.innerHTML;
       ul.innerHTML = localStorage.todoList;
     }, 200);
+  }
+});
+
+btn.addEventListener("click", () => {
+  console.log("Clicked");
+  body.classList.toggle("dark");
+  header.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    btn.classList.replace("fa-toggle-off", "fa-toggle-on");
+  } else {
+    btn.classList.replace("fa-toggle-on", "fa-toggle-off");
   }
 });

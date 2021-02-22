@@ -2,23 +2,41 @@
 
 body {
   font-family: $font-family;
-  background-color: #f7ede2;
+  background-color: $background-color;
+  transition: .3s linear;
+
+  &.dark {
+    background-color: #242424;
+  }
 }
 
 .container {
   margin: 10vh auto; 
   width: $width;
   border: $border-style;
-  box-shadow: 2px 1px 1px 2px rgba(0, 0, 0, 0.5);;
 
   header {
-    background-color: $yellow-color;
+    position: relative;
+    background-color: $header-color;
     text-align: center;
     padding: $padding;
     user-select: none;
+    transition: .3s linear;
+
+    &.dark {
+      background-color: #f59f00;
+    }
 
     h1 {
       font-size: $font-size-large;
+    }
+
+    .toggleBtn {
+      position: absolute;
+      right: 20px;
+      top: 25px;
+      font-size: $font-size-medium;
+      cursor: pointer;
     }
   }
 
@@ -41,7 +59,6 @@ body {
         }
         &::placeholder {
           visibility: hidden;
-          // opacity: 0;
         }
       }
   }
